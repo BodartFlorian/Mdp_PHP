@@ -1,5 +1,5 @@
 <?php
-    // ...
+        //.. 
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +25,9 @@
                 $password = $_GET['password'];
 
                 // I use my personal function with my namespace
-                // ...
-
+                include ('functions/florian.php');
+                
+                
             }
             else {
                 ?>
