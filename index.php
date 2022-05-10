@@ -1,5 +1,5 @@
 <?php
-//.. 
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -25,25 +25,23 @@
                 Tester un mot de passe
             </button>
         </div>
-        <!-- Modal -->
+
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="text" class="form-control" id="floatingPassword" name="textPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                        <button type="button" class="btn btn-primary" type="submit">Tester</button>
+                        <button name="password" type="submit" class="btn btn-primary">Tester</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
 
 
 
