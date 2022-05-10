@@ -1,13 +1,14 @@
 <?php
 
-// namespace florian;
+namespace florian;
 
 function checkPassword($password)
 {
 
     $valueRod = 0;
 
-    echo '<h1 class="text-center">Florian</h1>
+    echo '<div class="container">
+    <h1 class="text-center">Florian</h1>
     <p class="w-100">Mot de passe : ' . $password . '</p>
     <p class="text-end mb-0">Force du mot de passe</p>';
 
@@ -71,7 +72,7 @@ function checkPassword($password)
         case 100:
             $colorRod = 'bg-success';
             $displayContainer = 'd-none';
-            $buttonOk = '<a href="http://localhost/index.php" type="button" class="btn btn-success">Success</a>';
+            $buttonOk = '<div class="row mx-auto mt-4" style="width: 5%"><a href="http://localhost/index.php" type="button" class="btn btn-success">OK</a></div>';
             break;
     }
 
@@ -83,9 +84,8 @@ function checkPassword($password)
 
 
     // missing something about password
-    echo '<div class="container ' . $displayContainer . '">
-            <div class="row align-middle">
-                <ul class="list-group col-4">
+    echo '<div class="row ' . $displayContainer . '">
+                <ul class="list-group col-4 mx-auto mt-4">
                     <li class="list-group-item active" aria-current="true">Le mot de passe doit contenir au moins:</li>
                     <li class="list-group-item ' . $displayNumber . '">1 chiffre</li>
                     <li class="list-group-item ' . $displayLower . '">1 minuscule</li>
@@ -93,9 +93,8 @@ function checkPassword($password)
                     <li class="list-group-item ' . $displaySpecialChars . '">1 caratcère spécial</li>
                     <li class="list-group-item ' . $displayLenght . '">12 caractères</li>
                 </ul>
-            </div>
-        </div>';
-    echo $buttonOk;
+            </div>';    
+        echo $buttonOk. '</div>';
 }
 
 checkPassword($password);
