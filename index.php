@@ -25,9 +25,8 @@
                 $password = $_GET['password'];
 
                 // I use my personal function with my namespace
-                include ('functions/florian.php');
-                
-                
+                include ('functions/florian.php');   
+
             }
             else {
                 ?>
