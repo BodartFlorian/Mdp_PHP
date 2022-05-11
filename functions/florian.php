@@ -72,20 +72,20 @@ function checkPassword($password)
         case 100:
             $colorRod = 'bg-success';
             $displayContainer = 'd-none';
-            $buttonOk = '<div class="row mx-auto mt-4" style="width: 5%"><a href="http://localhost/index.php" type="button" class="btn btn-success">OK</a></div>';
+            $buttonOk = '<div class="row mx-auto mt-4" style="width: 50px"><a href="http://localhost/index.php" type="button" class="btn btn-success">OK</a></div>';
             break;
     }
 
 
     // strenght rod 
     echo '<div class="progress">
-     <div class="progress-bar progress-bar-striped progress-bar-animated ' . $colorRod . '" role="progressbar" aria-valuenow="75" aria-valuemin="0"      aria-valuemax="100" style="width: ' . $valueRod . '%"></div>
+     <div class="progress-bar progress-bar-striped progress-bar-animated ' . $colorRod . '" role="progressbar" aria-valuenow="75" aria-valuemin="0"  aria-valuemax="100" style="width: ' . $valueRod . '%"></div>
     </div>';
 
 
     // missing something about password
     echo '<div class="row ' . $displayContainer . '">
-            <ul class="list-group col-4 mx-auto mt-4">
+            <ul class="list-group mx-auto mt-4" style="max-width: 325px">
                 <li class="list-group-item active" aria-current="true">Le mot de passe doit contenir au moins:</li>
                 <li class="list-group-item ' . $displayNumber . '">1 chiffre</li>
                 <li class="list-group-item ' . $displayLower . '">1 minuscule</li>
