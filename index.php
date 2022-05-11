@@ -1,5 +1,6 @@
 <?php
-//..
+    session_start();
+    $password = $_GET['password'];
 ?>
 
 <!DOCTYPE html>
@@ -26,49 +27,54 @@
             </button>
         </div>
 
+        <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingPassword" name="textPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
-                        </div>
+            <div class="modal-content">
+            <div class="modal-body">
+            <!-- Champ -->
+                <form action="index.php?password=" method="get">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>">
+                        <label for="floatingPassword">Password</label>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                        <button name="password" type="submit" class="btn btn-primary">Tester</button>
-                    </div>
-                </div>
+            </div>
+            <div class=" modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary" name="savePassword">Tester</button>
+                </form>
+            </div>
+            </div>
             </div>
         </div>
 
+    <?php
+
+    if (isset($_GET['password'])) {
+
+                if (isset($_POST['savePassword'])) {
+                    $urlPassword =  $_SERVER['HTTP_HOST'] . $password;
+                }
 
 
+        // I use my personal function with my namespace
+        include('./functions/florian.php');
 
-        <?php
+    } else {
+    ?>
 
-        if (isset($_GET['password'])) {
+        <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">Bonjour et bienvenue 🙂</h4>
+            <p>Vérifions si votre mot de passe est bien sécurisé !</p>
+            <hr>
+            <p>Pour celà, il vous suffit de le renseigner directement dans l'URL comme dans l'example ci-dessous :</p>
+            <a href="index.php?password=motdepasse" class="link-primary mb-0">index.php?password=motdepasse</a>
+        </div>
 
-            $password = $_GET['password'];
+    <?php
+    }
 
-            // I use my personal function with my namespace
-            include('functions/florian.php');
-        } else {
-        ?>
-
-            <div class="alert alert-info" role="alert">
-                <h4 class="alert-heading">Bonjour et bienvenue 🙂</h4>
-                <p>Vérifions si votre mot de passe est bien sécurisé !</p>
-                <hr>
-                <p>Pour celà, il vous suffit de le renseigner directement dans l'URL comme dans l'example ci-dessous :</p>
-                <a href="index.php?password=motdepasse" class="link-primary mb-0">index.php?password=motdepasse</a>
-            </div>
-
-        <?php
-        }
-
-        ?>
+    ?>
 
     </div>
 

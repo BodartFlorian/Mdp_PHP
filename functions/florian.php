@@ -85,16 +85,16 @@ function checkPassword($password)
 
     // missing something about password
     echo '<div class="row ' . $displayContainer . '">
-                <ul class="list-group col-4 mx-auto mt-4">
-                    <li class="list-group-item active" aria-current="true">Le mot de passe doit contenir au moins:</li>
-                    <li class="list-group-item ' . $displayNumber . '">1 chiffre</li>
-                    <li class="list-group-item ' . $displayLower . '">1 minuscule</li>
-                    <li class="list-group-item ' . $displayUpper . '">1 majuscule</li>
-                    <li class="list-group-item ' . $displaySpecialChars . '">1 caratcère spécial</li>
-                    <li class="list-group-item ' . $displayLenght . '">12 caractères</li>
-                </ul>
-            </div>';    
-        echo $buttonOk. '</div>';
+            <ul class="list-group col-4 mx-auto mt-4">
+                <li class="list-group-item active" aria-current="true">Le mot de passe doit contenir au moins:</li>
+                <li class="list-group-item ' . $displayNumber . '">1 chiffre</li>
+                <li class="list-group-item ' . $displayLower . '">1 minuscule</li>
+                <li class="list-group-item ' . $displayUpper . '">1 majuscule</li>
+                <li class="list-group-item ' . $displaySpecialChars . '">1 caratcère spécial</li>
+                <li class="list-group-item ' . $displayLenght . '">12 caractères</li>
+            </ul>
+        </div>';    
+    echo $buttonOk. '</div>';
 }
 
 checkPassword($password);
