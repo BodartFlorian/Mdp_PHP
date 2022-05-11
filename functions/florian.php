@@ -96,5 +96,3 @@ function checkPassword($password)
         </div>';    
     echo $buttonOk. '</div>';
 }
-
-checkPassword($password);

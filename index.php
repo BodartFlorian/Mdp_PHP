@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include_once('./functions/florian.php');
     $password = $_GET['password'];
 ?>
 
@@ -52,13 +52,12 @@
 
     if (isset($_GET['password'])) {
 
-                if (isset($_POST['savePassword'])) {
-                    $urlPassword =  $_SERVER['HTTP_HOST'] . $password;
-                }
-
+        if (isset($_POST['savePassword'])) {
+            $urlPassword =  $_SERVER['HTTP_HOST'] . $password;
+        }
 
         // I use my personal function with my namespace
-        include('./functions/florian.php');
+        florian\checkPassword($password);
 
     } else {
     ?>
